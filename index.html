@@ -7,9 +7,8 @@
   <meta name="description" content="问卷hub：为课程研究寻找样本，让认真填写问卷的同学彼此相助。">
   <title>问卷hub SURVEY HUB · 校园问卷互助</title>
   <link rel="stylesheet" href="./styles.bb880fc427ee.css">
-  <link rel="stylesheet" href="./retro.cea26f4ac20d.css">
-  <link rel="stylesheet" href="./list-layout.css">
-  <script type="module" src="./src/app.134ff70f07f7.js"></script>
+  <link rel="stylesheet" href="./retro.e870ae40bd8e.css">
+  <script type="module" src="./src/app.3a799029e4b8.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#survey-board">跳到问卷广场</a>
@@ -38,45 +37,38 @@
     <div class="workspace">
       <section id="survey-board" class="board" aria-labelledby="board-heading">
         <div class="section-heading"><div><h1 id="board-heading"><span>问卷广场</span><img class="collage-sticker collage-blueberries" src="./assets/collage/blueberries-v1.png" width="64" height="48" alt="" aria-hidden="true" decoding="async"></h1></div><span class="board-count" id="result-count" aria-live="polite">正在寻找同学的研究…</span></div>
-        <div class="search-row"><label class="search-box"><i data-icon="search"></i><input id="search" type="search" placeholder="搜索问卷标题或话题" aria-label="搜索问卷标题或话题"><span class="search-shortcut" aria-hidden="true">/</span></label><label class="sort-box"><i data-icon="sort"></i><select id="sort" aria-label="问卷排序"><option value="recommended">积分优先推荐</option><option value="clicks">点击量最多</option><option value="shortest">用时最短</option><option value="prize">有抽奖</option><option value="latest">最新发布</option><option value="needed">缺口最多</option></select></label></div><p class="sorting-note" id="sorting-note">积分推荐按发布者有效积分排序；点击量单独统计，不代表问卷质量或偏好。</p>
+        <div class="search-row"><label class="search-box"><i data-icon="search"></i><input id="search" type="search" placeholder="搜索问卷标题或话题" aria-label="搜索问卷标题或话题"><span class="search-shortcut" aria-hidden="true">/</span></label><label class="sort-box"><i data-icon="sort"></i><select id="sort" aria-label="问卷排序"><option value="recommended">积分优先推荐</option><option value="clicks">点击量最多</option><option value="latest">最新发布</option><option value="shortest">用时最短</option><option value="needed">缺口最多</option></select></label></div><p class="sorting-note" id="sorting-note">积分推荐按发布者有效积分排序；点击量单独统计，不代表问卷质量或偏好。</p>
         <div class="filter-row"><div class="filters" role="group" aria-label="按条件筛选"><button class="filter active" data-filter="all" aria-pressed="true">全部问卷</button><button class="filter" data-filter="eligible" aria-pressed="false">适合我填写</button><button class="filter" data-filter="short" aria-pressed="false">5 分钟以内</button><button class="filter" data-filter="prize" aria-pressed="false"><img class="collage-sticker collage-dice" src="./assets/collage/dice-v1.png" width="30" height="24" alt="" aria-hidden="true" decoding="async">有抽奖</button></div></div>
         <div id="survey-grid" class="survey-grid"></div>
 
       </section>
 
     </div>
-    <section id="profile-page" class="profile-page" hidden aria-labelledby="profile-heading"><div class="profile-page-heading"><div><p class="profile-overline">MY SURVEY HUB</p><h1 id="profile-heading">我的个人中心</h1></div><button class="button secondary-button" data-action="board">返回问卷广场</button></div><div class="profile-layout"><div id="profile-details"></div><div class="profile-side">        <section class="ledger" aria-labelledby="ledger-heading"><div class="ledger-head"><h2 id="ledger-heading">我的互助手账</h2><i data-icon="notebook"></i></div><div class="balance"><span>当前有效积分</span><div><strong id="balance">0</strong><small>积分</small></div><p id="expiry-note">每笔积分自领取起 7 天有效</p></div><button class="button paper-button" data-action="participation">我的参与记录 <span aria-hidden="true">↗</span></button><div class="ledger-rule"></div><div class="unlock-heading"><span>发布及每周续展 · 各扣 50 分</span><strong id="unlock-count">0 / 50 分</strong></div><div class="credit-progress" id="credit-progress" role="progressbar" aria-label="发布所需有效积分" aria-valuemin="0" aria-valuemax="50" aria-valuenow="0" style="--progress:0%"><span></span></div><p class="unlock-copy" id="unlock-copy">有效积分达到 50 分，即可申请发布。</p><button class="ledger-link" data-action="publish" id="publish-link">先准备问卷草稿 <span aria-hidden="true">→</span></button></section><div class="profile-links"><button class="button secondary-button" data-action="mine">我的问卷</button><button class="button secondary-button" data-action="invite">邀请同学 · 首位 +20 / 之后 +5</button><button class="button secondary-button" data-action="rules">互助规则</button><button class="button secondary-button" id="profile-signout">退出登录</button></div></div></div></section>
+    <section id="profile-page" class="profile-page" hidden aria-labelledby="profile-heading">
+      <div class="profile-page-heading"><div><p class="profile-overline">MY SURVEY HUB</p><h1 id="profile-heading">我的个人中心</h1></div><button class="button secondary-button" data-action="board">返回问卷广场</button></div>
+      <div class="profile-layout">
+        <aside class="profile-personal" aria-label="个人资料"><div id="profile-details"></div><p class="profile-personal-hint">头像和资料收在这里，需要时再展开编辑。</p></aside>
+        <div class="profile-side">
+          <section class="ledger profile-points" aria-labelledby="ledger-heading">
+            <div class="ledger-head"><div><p class="points-overline">POINTS · 本周可用</p><h2 id="ledger-heading">我的积分</h2></div><i data-icon="notebook"></i></div>
+            <div class="points-main"><div class="points-hero"><div class="balance"><span>当前有效积分</span><div><strong id="balance">0</strong><small>分</small></div></div><p class="points-expiry-summary" id="points-expiry-summary">暂无即将过期的有效积分</p></div><div class="points-context"><strong>积分怎么用</strong><p>发布问卷和每周续展，各扣 50 分。</p><p>每笔积分到账后有效 7 天。</p></div></div>
+            <details class="points-details" id="points-details"><summary>查看每笔积分与发布规则 <span aria-hidden="true">⌄</span></summary><div class="points-details-body"><p id="expiry-note">每笔积分自领取起 7 天有效</p><ul id="credit-batches" class="credit-batches"><li>展开后读取积分记录。</li></ul><div class="ledger-rule"></div><div class="unlock-heading"><span>发布及每周续展 · 各扣 50 分</span><strong id="unlock-count">0 / 50 分</strong></div><div class="credit-progress" id="credit-progress" role="progressbar" aria-label="发布所需有效积分" aria-valuemin="0" aria-valuemax="50" aria-valuenow="0" style="--progress:0%"><span></span></div><p class="unlock-copy" id="unlock-copy">有效积分达到 50 分，即可申请发布。</p></div></details>
+            <button class="ledger-link" data-action="publish" id="publish-link">先准备问卷草稿 <span aria-hidden="true">→</span></button>
+          </section>
+          <div class="profile-shortcuts" aria-label="个人中心操作">
+            <button class="profile-shortcut profile-shortcut-dark" data-action="participation"><span>我的参与</span><span aria-hidden="true">↗</span></button>
+            <button class="profile-shortcut profile-shortcut-dark" data-action="mine"><span>我的问卷</span><span aria-hidden="true">↗</span></button>
+            <details class="profile-notices profile-shortcut-light" id="profile-notices"><summary><span>官方消息</span><span class="notice-counter"><strong id="notice-count">0</strong> 条 <span aria-hidden="true">⌄</span></span></summary><div id="notice-list" class="notice-list"><p>正在读取消息…</p></div></details>
+            <button class="profile-shortcut profile-shortcut-light" data-action="rules"><span>互助规则</span><span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="profile-secondary-actions"><button class="button secondary-button" data-action="invite">邀请同学 · 首位 +20 / 之后 +5</button><button class="button secondary-button" id="profile-signout">退出登录</button></div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="wrap footer"><img class="collage-sticker collage-cherries" src="./assets/collage/cherries-v1.png" width="96" height="96" alt="" aria-hidden="true" loading="lazy" decoding="async"><img class="collage-sticker collage-guitar" src="./assets/collage/red-guitar-v1.png" width="112" height="76" alt="" aria-hidden="true" loading="lazy" decoding="async"><div><strong>问卷hub</strong><span>校园问卷互助</span></div><div><button data-action="rules">互助规则</button><button data-action="feedback">关于问卷hub</button><span>© 2026</span></div></footer>
   <nav class="mobile-bottom-nav" aria-label="移动端导航"><button data-action="board"><i data-icon="grid"></i>问卷广场</button><button data-action="publish"><i data-icon="plus"></i>发布问卷</button><button data-action="profile"><i data-icon="user"></i>个人中心</button></nav>
   <dialog id="dialog" aria-labelledby="dialog-title"><div class="dialog-header"><span class="dialog-brand">问卷hub / SURVEY HUB</span><button class="icon-button" id="close-dialog" aria-label="关闭弹窗"><i data-icon="close"></i></button></div><div id="dialog-body"></div></dialog>
   <div class="status-message" role="status" id="status-message" hidden></div>
-  <script>
-  // 年级/性别切换（事件委托，覆盖 requirements 与 cat-progress 两处）
-  document.addEventListener('click', function(e){
-    var t = e.target.closest('[data-reqtab]');
-    if(!t) return;
-    var box = t.closest('.requirements') || t.closest('.cat-progress');
-    if(!box) return;
-    var key = t.getAttribute('data-reqtab');
-    box.querySelectorAll('.req-tab').forEach(function(b){ b.classList.toggle('active', b===t); });
-    box.querySelectorAll('.req-pane, .cat-pane').forEach(function(p){
-      var isGender = p.classList.contains('req-pane-s') || p.classList.contains('cat-pane-s');
-      p.hidden = (key==='gender') ? !isGender : isGender;
-    });
-  });
-  // 「有抽奖」排序联动筛选（筛选栏已隐藏，通过隐藏按钮触发原有筛选委托）
-  document.addEventListener('change', function(e){
-    if(e.target && e.target.id==='sort'){
-      if(e.target.value==='prize'){
-        var b = document.querySelector('[data-filter="prize"]');
-        if(b) b.click();
-      } else {
-        var a = document.querySelector('[data-filter="all"]');
-        if(a && !a.classList.contains('active')) a.click();
-      }
-    }
-  });
-  </script>
 </body>
 </html>
