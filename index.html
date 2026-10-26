@@ -7,8 +7,8 @@
   <meta name="description" content="问卷hub：为课程研究寻找样本，让认真填写问卷的同学彼此相助。">
   <title>问卷hub SURVEY HUB · 校园问卷互助</title>
   <link rel="stylesheet" href="./styles.bb880fc427ee.css">
-  <link rel="stylesheet" href="./retro.e870ae40bd8e.css">
-  <script type="module" src="./src/app.3a799029e4b8.js"></script>
+  <link rel="stylesheet" href="./retro.e4746425ca0e.css">
+  <script type="module" src="./src/app.4ea6414b817a.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#survey-board">跳到问卷广场</a>
@@ -37,7 +37,7 @@
     <div class="workspace">
       <section id="survey-board" class="board" aria-labelledby="board-heading">
         <div class="section-heading"><div><h1 id="board-heading"><span>问卷广场</span><img class="collage-sticker collage-blueberries" src="./assets/collage/blueberries-v1.png" width="64" height="48" alt="" aria-hidden="true" decoding="async"></h1></div><span class="board-count" id="result-count" aria-live="polite">正在寻找同学的研究…</span></div>
-        <div class="search-row"><label class="search-box"><i data-icon="search"></i><input id="search" type="search" placeholder="搜索问卷标题或话题" aria-label="搜索问卷标题或话题"><span class="search-shortcut" aria-hidden="true">/</span></label><label class="sort-box"><i data-icon="sort"></i><select id="sort" aria-label="问卷排序"><option value="recommended">积分优先推荐</option><option value="clicks">点击量最多</option><option value="latest">最新发布</option><option value="shortest">用时最短</option><option value="needed">缺口最多</option></select></label></div><p class="sorting-note" id="sorting-note">积分推荐按发布者有效积分排序；点击量单独统计，不代表问卷质量或偏好。</p>
+        <div class="search-row"><label class="search-box"><i data-icon="search"></i><input id="search" type="search" placeholder="搜索问卷标题或话题" aria-label="搜索问卷标题或话题"><span class="search-shortcut" aria-hidden="true">/</span></label><label class="sort-box"><i data-icon="sort"></i><select id="sort" aria-label="问卷排序"><option value="recommended">积分优先推荐</option><option value="clicks">点击量最多</option><option value="shortest">用时最短</option><option value="prize">有抽奖</option><option value="latest">最新发布</option><option value="needed">缺口最多</option></select></label></div><p class="sorting-note" id="sorting-note">积分推荐按发布者有效积分排序；点击量单独统计，不代表问卷质量或偏好。</p>
         <div class="filter-row"><div class="filters" role="group" aria-label="按条件筛选"><button class="filter active" data-filter="all" aria-pressed="true">全部问卷</button><button class="filter" data-filter="eligible" aria-pressed="false">适合我填写</button><button class="filter" data-filter="short" aria-pressed="false">5 分钟以内</button><button class="filter" data-filter="prize" aria-pressed="false"><img class="collage-sticker collage-dice" src="./assets/collage/dice-v1.png" width="30" height="24" alt="" aria-hidden="true" decoding="async">有抽奖</button></div></div>
         <div id="survey-grid" class="survey-grid"></div>
 
@@ -58,6 +58,7 @@
           <div class="profile-shortcuts" aria-label="个人中心操作">
             <button class="profile-shortcut profile-shortcut-dark" data-action="participation"><span>我的参与</span><span aria-hidden="true">↗</span></button>
             <button class="profile-shortcut profile-shortcut-dark" data-action="mine"><span>我的问卷</span><span aria-hidden="true">↗</span></button>
+            <button class="profile-shortcut profile-shortcut-light" data-action="admin" id="admin-profile-entry" hidden><span>管理后台</span><span aria-hidden="true">↗</span></button>
             <details class="profile-notices profile-shortcut-light" id="profile-notices"><summary><span>官方消息</span><span class="notice-counter"><strong id="notice-count">0</strong> 条 <span aria-hidden="true">⌄</span></span></summary><div id="notice-list" class="notice-list"><p>正在读取消息…</p></div></details>
             <button class="profile-shortcut profile-shortcut-light" data-action="rules"><span>互助规则</span><span aria-hidden="true">↗</span></button>
           </div>
