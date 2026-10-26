@@ -165,26 +165,35 @@ body[data-mode="demo"] .edition-inner>.preview-label { display:block; }
 .rules-overview-heading { padding-right:140px; }
 .section-heading h1 { gap:12px;min-width:0; }
 .section-heading h1>span { white-space:nowrap; }
-.collage-flower { width:46px;height:46px;transform:rotate(-14deg); }
+.collage-cat { width:46px;height:58px;margin-left:-4px;align-self:flex-end; }
+.collage-blueberries { width:56px;height:42px;transform:rotate(-8deg); }
+.filter[data-filter="prize"] { display:inline-flex;align-items:center;gap:3px; }
+.collage-dice { width:30px;height:24px; }
 .footer { position:relative; }
 .collage-cherries { position:absolute;left:34%;top:-36px;width:76px;height:84px;transform:rotate(9deg); }
+.collage-guitar { position:absolute;right:18%;top:-36px;width:112px;height:76px;transform:rotate(-12deg); }
 @media(max-width:900px) {
  .rules-overview-heading { padding-right:20px; }
  .collage-bow { display:none; }
- .collage-flower { width:38px;height:38px; }
+ .collage-cat { width:38px;height:48px; }
+ .collage-blueberries { width:46px;height:35px; }
  .collage-cherries { left:auto;right:8px;top:6px;width:64px;height:72px; }
+ .collage-guitar { left:40%;right:auto;top:-28px;width:84px;height:58px; }
  .footer { padding-right:90px; }
 }
 @media(max-width:600px) {
  .rules-overview-heading { padding-right:12px; }
  .section-heading h1 { gap:8px; }
- .collage-flower { width:32px;height:32px; }
+ .collage-cat { width:32px;height:40px;margin-left:-8px; }
+ .collage-blueberries { width:39px;height:30px; }
+ .collage-dice { width:26px;height:21px; }
  .board-count { max-width:120px; }
 }
-@media(max-width:350px) { .section-heading h1 { font-size:25px; }.collage-flower { width:30px;height:30px; }.board-count { max-width:110px; } }
+@media(max-width:350px) { .section-heading h1 { font-size:25px; }.collage-blueberries { width:34px;height:26px; }.board-count { max-width:110px; } }
 
 /* Points explain the next action; the board stays close to the mobile fold. */
 .rules-overview-heading h2 { font-weight:700; }
+.rules-overview-heading h2 strong { white-space:nowrap; }
 .rules-summary { margin-top:7px;color:var(--color-muted);font-size:13px;line-height:1.6; }
 .rules-diagram { display:block;padding-top:24px; }
 .points-flow { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;list-style:none;padding:0;margin:0; }
