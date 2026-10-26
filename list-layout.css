@@ -1,0 +1,181 @@
+/* =====================================================
+   首页列表布局覆盖层（2026-10-26）
+   ① 问卷竖排单列，卡片上下压窄（一屏约 4-5 份）
+   ② 标题下显示问卷描述（一行，超出省略号）
+   ③ 分类标签支持 年级/性别 切换（年级优先）
+   ④ 隐藏次要信息（点击/点赞）
+   回退：删除 index.html 中对本文件的 <link> 即可。
+   ===================================================== */
+
+/* 1. 容器：单列竖排 */
+.survey-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+/* 2. 卡片：横向布局（左信息 + 右按钮），上下压窄 */
+.survey-card,
+.survey-card:nth-child(n) {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 10px 16px !important;
+  border-radius: 12px !important;
+  border-top-width: 1px !important;
+  min-width: 0 !important;
+}
+
+/* 3. 左侧主链接区 */
+.survey-card > a.survey-main {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+/* 4. 顶部：积分徽章 */
+.survey-card .card-top {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin: 0 !important;
+}
+.survey-card .credit-tag {
+  font-size: 11px !important;
+  padding: 1px 8px !important;
+  border-radius: 10px !important;
+}
+.survey-card h3 {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+}
+
+/* 5. 问卷描述：一行省略号 */
+.survey-card .card-desc {
+  font-size: 12px !important;
+  color: var(--color-muted, #635c58) !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: 100% !important;
+}
+
+/* 6. 分类标签区（年级/性别切换） */
+.survey-card .requirements {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+}
+.survey-card .requirement {
+  font-size: 11px !important;
+  padding: 1px 7px !important;
+  border-radius: 6px !important;
+  line-height: 1.7 !important;
+}
+.req-switch {
+  display: inline-flex !important;
+  border: 1px solid var(--color-line, #d9d2c5) !important;
+  border-radius: 7px !important;
+  overflow: hidden !important;
+  margin-right: 2px !important;
+}
+.req-tab {
+  border: 0 !important;
+  background: var(--color-card, #fffdf7) !important;
+  color: var(--color-muted, #635c58) !important;
+  font-size: 11px !important;
+  line-height: 1 !important;
+  padding: 4px 8px !important;
+}
+.req-tab.active {
+  background: var(--color-ink, #293a50) !important;
+  color: var(--color-on-navy, #fbf8ef) !important;
+}
+
+/* 7. 进度行：已填/目标 + 进度条 */
+.survey-card .sample-line {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+  gap: 8px !important;
+  font-size: 12px !important;
+  margin: 0 !important;
+}
+.survey-card .sample-line strong {
+  font-size: 15px !important;
+}
+.survey-card .progress-track {
+  height: 5px !important;
+  margin: 0 !important;
+}
+
+/* 8. 元信息行（时长/平台） */
+.survey-card .card-meta {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  font-size: 11px !important;
+  color: var(--color-muted, #635c58) !important;
+  margin: 0 !important;
+}
+
+/* 9. 隐藏次要信息（点击/点赞） */
+.survey-card .card-signals {
+  display: none !important;
+}
+.survey-card .card-notice {
+  font-size: 11px !important;
+  margin: 0 !important;
+}
+.survey-card .quota-detail {
+  font-size: 11px !important;
+  margin: 0 !important;
+}
+
+/* 10. 右侧按钮：竖排小按钮 */
+.survey-card .card-actions {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+.survey-card .card-actions .button {
+  min-height: 32px !important;
+  padding: 5px 14px !important;
+  font-size: 12px !important;
+  white-space: nowrap !important;
+  border-radius: 8px !important;
+}
+
+/* 11. 移动端：按钮换行到底部 */
+@media (max-width: 560px) {
+  .survey-card,
+  .survey-card:nth-child(n) {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    padding: 10px 12px !important;
+  }
+  .survey-card > a.survey-main {
+    min-width: 100% !important;
+  }
+  .survey-card .card-actions {
+    flex-direction: row !important;
+    width: 100% !important;
+    justify-content: flex-end !important;
+  }
+}

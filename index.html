@@ -8,6 +8,7 @@
   <title>问卷hub SURVEY HUB · 校园问卷互助</title>
   <link rel="stylesheet" href="./styles.bb880fc427ee.css">
   <link rel="stylesheet" href="./retro.7ecbb93c683e.css">
+  <link rel="stylesheet" href="./list-layout.css">
   <script type="module" src="./src/app.905ee6c618bf.js"></script>
 </head>
 <body>
@@ -37,7 +38,7 @@
     <div class="workspace">
       <section id="survey-board" class="board" aria-labelledby="board-heading">
         <div class="section-heading"><div><h1 id="board-heading"><span>问卷广场</span><img class="collage-sticker collage-blueberries" src="./assets/collage/blueberries-v1.png" width="64" height="48" alt="" aria-hidden="true" decoding="async"></h1></div><span class="board-count" id="result-count" aria-live="polite">正在寻找同学的研究…</span></div>
-        <div class="search-row"><label class="search-box"><i data-icon="search"></i><input id="search" type="search" placeholder="搜索问卷标题或话题" aria-label="搜索问卷标题或话题"><span class="search-shortcut" aria-hidden="true">/</span></label><label class="sort-box"><i data-icon="sort"></i><select id="sort" aria-label="问卷排序"><option value="recommended">积分优先推荐</option><option value="clicks">点击量最多</option><option value="latest">最新发布</option><option value="shortest">用时最短</option><option value="needed">缺口最多</option></select></label></div><p class="sorting-note" id="sorting-note">积分推荐按发布者有效积分排序；点击量单独统计，不代表问卷质量或偏好。</p>
+        <div class="search-row"><label class="search-box"><i data-icon="search"></i><input id="search" type="search" placeholder="搜索问卷标题或话题" aria-label="搜索问卷标题或话题"><span class="search-shortcut" aria-hidden="true">/</span></label><label class="sort-box"><i data-icon="sort"></i><select id="sort" aria-label="问卷排序"><option value="recommended">积分优先推荐</option><option value="clicks">点击最多</option><option value="shortest">用时最少</option><option value="prize">有抽奖</option><option value="latest">最新发布</option><option value="needed">缺口最多</option></select></label></div><p class="sorting-note" id="sorting-note">积分推荐按发布者有效积分排序；点击量单独统计，不代表问卷质量或偏好。</p>
         <div class="filter-row"><div class="filters" role="group" aria-label="按条件筛选"><button class="filter active" data-filter="all" aria-pressed="true">全部问卷</button><button class="filter" data-filter="eligible" aria-pressed="false">适合我填写</button><button class="filter" data-filter="short" aria-pressed="false">5 分钟以内</button><button class="filter" data-filter="prize" aria-pressed="false"><img class="collage-sticker collage-dice" src="./assets/collage/dice-v1.png" width="30" height="24" alt="" aria-hidden="true" decoding="async">有抽奖</button></div></div>
         <div id="survey-grid" class="survey-grid"></div>
 
@@ -50,5 +51,35 @@
   <nav class="mobile-bottom-nav" aria-label="移动端导航"><button data-action="board"><i data-icon="grid"></i>问卷广场</button><button data-action="publish"><i data-icon="plus"></i>发布问卷</button><button data-action="profile"><i data-icon="user"></i>个人中心</button></nav>
   <dialog id="dialog" aria-labelledby="dialog-title"><div class="dialog-header"><span class="dialog-brand">问卷hub / SURVEY HUB</span><button class="icon-button" id="close-dialog" aria-label="关闭弹窗"><i data-icon="close"></i></button></div><div id="dialog-body"></div></dialog>
   <div class="status-message" role="status" id="status-message" hidden></div>
+  <script>
+  (function () {
+    // ① 排序下拉框「有抽奖」联动：复用页面原有筛选机制（事件委托），不改原 JS
+    var sort = document.getElementById('sort');
+    if (!sort) return;
+    function mk(v) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.style.display = 'none';
+      b.setAttribute('data-filter', v);
+      document.body.appendChild(b);
+      return b;
+    }
+    var fAll = mk('all'), fPrize = mk('prize');
+    sort.addEventListener('change', function () {
+      (sort.value === 'prize' ? fPrize : fAll).click();
+    });
+    // ② 分类标签切换（年级 / 性别）：委托处理卡片里的 req-tab 按钮
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest('.req-tab');
+      if (!t) return;
+      var box = t.closest('.requirements');
+      if (!box) return;
+      box.querySelectorAll('.req-pane').forEach(function (p) { p.hidden = true; });
+      var sel = t.getAttribute('data-reqtab') === 'grade' ? '.req-pane-g' : '.req-pane-s';
+      if (box.querySelector(sel)) box.querySelector(sel).hidden = false;
+      box.querySelectorAll('.req-tab').forEach(function (b) { b.classList.toggle('active', b === t); });
+    });
+  })();
+  </script>
 </body>
 </html>
