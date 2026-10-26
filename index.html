@@ -72,11 +72,11 @@
     document.addEventListener('click', function (e) {
       var t = e.target.closest('.req-tab');
       if (!t) return;
-      var box = t.closest('.requirements');
+      var box = t.closest('.requirements, .cat-progress');
       if (!box) return;
-      box.querySelectorAll('.req-pane').forEach(function (p) { p.hidden = true; });
-      var sel = t.getAttribute('data-reqtab') === 'grade' ? '.req-pane-g' : '.req-pane-s';
-      if (box.querySelector(sel)) box.querySelector(sel).hidden = false;
+      box.querySelectorAll('.req-pane, .cat-pane').forEach(function (p) { p.hidden = true; });
+      var sel = t.getAttribute('data-reqtab') === 'grade' ? '.req-pane-g, .cat-pane-g' : '.req-pane-s, .cat-pane-s';
+      box.querySelectorAll(sel).forEach(function (p) { p.hidden = false; });
       box.querySelectorAll('.req-tab').forEach(function (b) { b.classList.toggle('active', b === t); });
     });
   })();

@@ -179,3 +179,42 @@
     justify-content: flex-end !important;
   }
 }
+
+/* 12. 分类进度条（每类一条，有 quotaBreakdown 数据时显示） */
+.cat-progress {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  margin: 0 !important;
+}
+.cat-pane {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+.cat-pane[hidden] {
+  display: none !important;
+}
+.cat-line {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 11px !important;
+  color: var(--color-muted, #635c58) !important;
+}
+.cat-label {
+  width: 36px !important;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+}
+.cat-count {
+  flex-shrink: 0 !important;
+  font-variant-numeric: tabular-nums !important;
+  font-size: 11px !important;
+}
+.cat-line .progress-track {
+  flex: 1 !important;
+  min-width: 50px !important;
+  height: 5px !important;
+  margin: 0 !important;
+}
