@@ -7,8 +7,8 @@
   <meta name="description" content="问卷hub：为课程研究寻找样本，让认真填写问卷的同学彼此相助。">
   <title>问卷hub SURVEY HUB · 校园问卷互助</title>
   <link rel="stylesheet" href="./styles.bb880fc427ee.css">
-  <link rel="stylesheet" href="./retro.932e4598c5ce.css">
-  <script type="module" src="./src/app.d982e0a8e048.js"></script>
+  <link rel="stylesheet" href="./retro.0b987093973e.css">
+  <script type="module" src="./src/app.905ee6c618bf.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#survey-board">跳到问卷广场</a>
@@ -23,14 +23,15 @@
   <main class="wrap">
     <section class="rules-overview" aria-labelledby="rules-overview-title">
       <img class="collage-sticker collage-bow" src="./assets/collage/bow-v1.png" width="128" height="128" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <div class="rules-overview-heading"><h2 id="rules-overview-title">发布前，先完成 <strong>5 份</strong>问卷</h2><button id="rules-toggle" class="rules-toggle" aria-expanded="false" aria-controls="rules-diagram">查看规则 <span aria-hidden="true">＋</span></button></div>
+      <div class="rules-overview-heading"><div><h2 id="rules-overview-title">选一份问卷，完成后领 <strong>10 积分</strong></h2><p class="rules-summary">50 分可申请发布 · 继续互助，让问卷持续展示</p></div><button id="rules-toggle" class="rules-toggle" aria-expanded="false" aria-controls="rules-diagram">积分规则 <span aria-hidden="true">＋</span></button></div>
       <div class="rules-diagram" id="rules-diagram">
-        <div class="publish-flow" role="group" aria-label="先认真完成五份不同问卷并核验完成码，再解锁发布自己的问卷">
-          <div class="rule-stage"><div class="five-forms" aria-hidden="true"><i data-icon="notebook"></i><i data-icon="notebook"></i><i data-icon="notebook"></i><i data-icon="notebook"></i><i data-icon="notebook"></i></div><strong>完成 5 份问卷</strong><span>填完后核验完成码</span></div>
-          <span class="flow-arrow" aria-hidden="true">→</span>
-          <div class="rule-stage"><div class="publish-stamp" aria-hidden="true"><i data-icon="upload"></i></div><strong>解锁问卷发布</strong><span>上传链接，审核后展示</span></div>
-        </div>
-        <div class="credit-routes" aria-label="获得积分的两种方式"><div><span class="route-icon"><i data-icon="notebook"></i></span><span>完成问卷<strong>每份 <b>+10</b> 积分</strong></span><i data-icon="badge-check"></i></div><button data-action="invite"><span class="route-icon"><i data-icon="users"></i></span><span>邀请新同学<strong>每人 <b>+20</b> 积分</strong></span><span class="route-link">去邀请 →</span></button><p>邀请积分不计入 5 份要求 · 积分到账后 14 天有效</p></div>
+        <ol class="points-flow" aria-label="获取积分、申请发布、持续展示">
+          <li><span class="step-number">01</span><div><strong>先填写，获得积分</strong><p>选择符合要求的问卷，提交后<br>回来核验完成码，每份 <b>+10 分</b>。</p></div></li>
+          <li><span class="step-number">02</span><div><strong>满 50 分，申请发布</strong><p>按当前有效积分判断，发布不扣分。<br>填写信息、设置完成码，审核后展示。</p></div></li>
+          <li><span class="step-number">03</span><div><strong>继续互助，持续展示</strong><p>每笔积分有效 <b>14 天</b>，积分越多越优先。<br>归零暂停展示，获得新积分后恢复。</p></div></li>
+        </ol>
+        <div class="rules-bottom"><p>想展示超过两周？继续填写问卷或邀请新同学，获得新的有效积分。</p><button class="text-link" data-action="rules">查看完整规则 →</button></div>
+        <button class="invite-route" data-action="invite"><span><i data-icon="users"></i></span><span>邀请新同学也能得分：<strong>首位 +20</strong>，之后每位 <strong>+5</strong></span><span aria-hidden="true">→</span></button>
       </div>
     </section>
     <div class="workspace">
@@ -43,7 +44,7 @@
       </section>
 
     </div>
-    <section id="profile-page" class="profile-page" hidden aria-labelledby="profile-heading"><div class="profile-page-heading"><div><p class="profile-overline">MY SURVEY HUB</p><h1 id="profile-heading">我的个人中心</h1></div><button class="button secondary-button" data-action="board">返回问卷广场</button></div><div class="profile-layout"><div id="profile-details"></div><div class="profile-side">        <section class="ledger" aria-labelledby="ledger-heading"><div class="ledger-head"><h2 id="ledger-heading">我的互助手账</h2><i data-icon="notebook"></i></div><div class="balance"><span>当前有效积分</span><div><strong id="balance">0</strong><small>积分</small></div><p id="expiry-note">每笔积分自领取起 14 天有效</p></div><button class="button paper-button" data-action="participation">我的参与记录 <span aria-hidden="true">↗</span></button><div class="ledger-rule"></div><div class="unlock-heading"><span>问卷发布资格</span><strong id="unlock-count">0 / 5</strong></div><div class="five-stamps" id="five-stamps" aria-label="已完成 0 份，还需 5 份"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div><p class="unlock-copy" id="unlock-copy">再完成 <strong>5 份问卷</strong>，<br>就能发布你的第一份问卷。</p><button class="ledger-link" data-action="publish" id="publish-link">查看发布步骤 <span aria-hidden="true">→</span></button></section><div class="profile-links"><button class="button secondary-button" data-action="mine">我的问卷与反馈</button><button class="button secondary-button" data-action="invite">邀请同学 +20 积分</button><button class="button secondary-button" data-action="rules">互助规则</button><button class="button secondary-button" id="profile-signout">退出登录</button></div></div></div></section>
+    <section id="profile-page" class="profile-page" hidden aria-labelledby="profile-heading"><div class="profile-page-heading"><div><p class="profile-overline">MY SURVEY HUB</p><h1 id="profile-heading">我的个人中心</h1></div><button class="button secondary-button" data-action="board">返回问卷广场</button></div><div class="profile-layout"><div id="profile-details"></div><div class="profile-side">        <section class="ledger" aria-labelledby="ledger-heading"><div class="ledger-head"><h2 id="ledger-heading">我的互助手账</h2><i data-icon="notebook"></i></div><div class="balance"><span>当前有效积分</span><div><strong id="balance">0</strong><small>积分</small></div><p id="expiry-note">每笔积分自领取起 14 天有效</p></div><button class="button paper-button" data-action="participation">我的参与记录 <span aria-hidden="true">↗</span></button><div class="ledger-rule"></div><div class="unlock-heading"><span>发布门槛 · 不扣积分</span><strong id="unlock-count">0 / 50 分</strong></div><div class="credit-progress" id="credit-progress" role="progressbar" aria-label="发布所需有效积分" aria-valuemin="0" aria-valuemax="50" aria-valuenow="0" style="--progress:0%"><span></span></div><p class="unlock-copy" id="unlock-copy">有效积分达到 50 分，即可申请发布。</p><button class="ledger-link" data-action="publish" id="publish-link">先准备问卷草稿 <span aria-hidden="true">→</span></button></section><div class="profile-links"><button class="button secondary-button" data-action="mine">我的问卷与反馈</button><button class="button secondary-button" data-action="invite">邀请同学 · 首位 +20 / 之后 +5</button><button class="button secondary-button" data-action="rules">互助规则</button><button class="button secondary-button" id="profile-signout">退出登录</button></div></div></div></section>
   </main>
   <footer class="wrap footer"><img class="collage-sticker collage-cherries" src="./assets/collage/cherries-v1.png" width="96" height="96" alt="" aria-hidden="true" loading="lazy" decoding="async"><div><strong>问卷hub</strong><span>校园问卷互助</span></div><div><button data-action="rules">互助规则</button><button data-action="feedback">关于问卷hub</button><span>© 2026</span></div></footer>
   <nav class="mobile-bottom-nav" aria-label="移动端导航"><button data-action="board"><i data-icon="grid"></i>问卷广场</button><button data-action="publish"><i data-icon="plus"></i>发布问卷</button><button data-action="profile"><i data-icon="user"></i>个人中心</button></nav>
