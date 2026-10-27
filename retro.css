@@ -227,7 +227,7 @@ body[data-mode="demo"] .edition-inner>.preview-label { display:block; }
 .owner-edit .field { margin-bottom:12px; }
 .publish-section .field { gap:10px; }
 .language-choices { display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0;margin:0 0 18px;padding:0;border:0; }
-.language-choices legend { width:100%;margin-bottom:8px; }
+.language-choices legend { width:max-content;max-width:100%;margin-bottom:8px; }
 .language-choices label { display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:8px 16px;border:1px solid var(--color-line);background:var(--color-card);cursor:pointer; }
 .language-choices label:has(:checked) { border-color:var(--color-blue);background:var(--color-blue-pale);font-weight:700; }
 .language-choices label:has(:focus-visible) { outline:2px solid var(--color-accent);outline-offset:3px; }
