@@ -80,9 +80,9 @@ body { background:var(--color-paper); }
 .category { font-size:12px;color:var(--card-accent); }
 .category::before { display:none; }
 .credit-tag { font-size:13px;font-weight:700;color:var(--color-accent);border:1px solid var(--color-accent);padding:3px 8px;border-radius:3px;white-space:nowrap; }
-.card-publisher { font-size:11px;color:var(--color-muted);margin-left:auto;display:inline-flex;align-items:center;gap:4px;white-space:nowrap; }
-.publisher-name { position:relative;display:inline-flex;align-items:center;padding-right:22px; }
-.publisher-badges { position:absolute;top:-9px;right:0;display:inline-flex;align-items:flex-start;gap:2px;pointer-events:none;filter:drop-shadow(0 1px 1px rgba(0,0,0,.18)); }
+.card-publisher { font-size:11px;color:var(--color-muted);margin-left:auto;display:inline-flex;align-items:center;gap:5px;white-space:nowrap; }
+.publisher-name { min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.publisher-badges { display:inline-flex;align-items:center;flex:none;min-height:27px;pointer-events:none;filter:drop-shadow(0 1px 1px rgba(0,0,0,.18)); }
 .publisher-badges .crown,.publisher-badges .medal-svg { display:block; }
 .survey-card h3 { font-family:var(--font-display);font-size:23px;line-height:1.45;letter-spacing:0;min-height:64px;margin:0 0 16px;overflow-wrap:anywhere;font-weight:800; }
 .language-sticker { display:inline-block;margin-left:5px;padding:0 3px;border:1px solid var(--card-accent);background:var(--card-tint);color:var(--card-accent);font:700 12px/1.7 var(--font-body);white-space:nowrap;vertical-align:middle;transform:rotate(-3deg); }
@@ -480,7 +480,8 @@ nav .nav-link[data-action="participation"] { position:relative; }
 .survey-card { min-width:0; }
 .survey-main { flex:1;min-width:0; }
 .card-top,.survey-card h3,.card-desc,.requirements,.sample-line,.card-meta,.card-notice { min-width:0; }
-.card-publisher { min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis; }
+.card-publisher { min-width:0;max-width:100%; }
+.card-publisher>svg { flex:none; }
 .card-actions { grid-template-columns:repeat(2,minmax(0,1fr));margin-top:auto; }
 .card-actions .button { min-width:0;white-space:normal;line-height:1.3;text-align:center;overflow-wrap:anywhere; }
 @media(max-width:1100px) {
