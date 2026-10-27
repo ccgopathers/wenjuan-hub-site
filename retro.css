@@ -271,6 +271,20 @@ body[data-mode="demo"] .edition-inner>.preview-label { display:block; }
  .profile-side .credit-progress { display:block; }.profile-side .credit-progress[hidden] { display:none; }
 }
 
+/* The rules open once for each signed-in account, then become a compact heading. */
+.rules-overview-heading { padding-bottom:16px; }
+.rules-toggle { display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:var(--color-blue);font:inherit;font-size:12px;white-space:nowrap;min-height:44px;padding:0;cursor:pointer; }
+.rules-diagram { display:none; }
+.rules-overview.is-open .rules-diagram { display:block; }
+@media(max-width:900px) {
+ .rules-overview-heading { padding-bottom:16px; }
+ .rules-overview.is-open .rules-diagram { display:block; }
+}
+@media(max-width:600px) {
+ .rules-overview-heading { padding-bottom:12px; }
+ .rules-toggle { font-size:11px; }
+}
+
 /* Personal center: identity leads; the light panel makes the balance easy to scan. */
 .profile-page .profile-page-heading { max-width:850px;margin-inline:auto; }
 .profile-page .profile-layout { display:flex;flex-direction:column;align-items:stretch;gap:18px;width:100%;max-width:850px;margin-inline:auto; }

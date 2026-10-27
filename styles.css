@@ -191,6 +191,22 @@ dialog::backdrop { background: var(--color-backdrop); }
 .tag { color: var(--color-accent); font-size: var(--text-xs); white-space: nowrap; }
 .code-display { padding: 18px; border: 1px dashed var(--color-accent); text-align: center; font-size: 27px; letter-spacing: .1em; font-weight: 650; margin: 20px 0; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
 .completion-note { margin: 12px 0 4px; padding: 12px 14px; border-left: 3px solid var(--color-ink); background: var(--color-blue-pale); color: var(--color-ink); font-size: var(--text-xs); line-height: 1.7; }
+.reward-rule { margin: -3px 0 8px; line-height: 1.7; }
+.reward-rule strong { color: var(--color-accent); }
+.completion-guide { margin: 22px 0 18px; padding: 18px 0 20px; border-block: 1px solid var(--color-line); }
+.completion-guide h3 { margin: 0 0 7px; font-family: var(--font-display); font-size: 19px; }
+.completion-guide>.field-help { line-height: 1.7; }
+.guide-group { margin-top: 20px; }
+.guide-group h4 { color: var(--color-blue); font-size: var(--text-sm); margin-bottom: 6px; }
+.guide-group>p { font-size: var(--text-xs); line-height: 1.8; margin-bottom: 12px; }
+.guide-gallery { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 0 12px; }
+.guide-gallery figure { flex: 0 0 180px; scroll-snap-align: start; margin: 0; border: 1px solid var(--color-line); background: var(--color-card); }
+.guide-gallery figure a { display: grid; place-items: center; height: 230px; padding: 6px; background: var(--color-blue-pale); }
+.guide-gallery figure img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.guide-gallery figcaption { min-height: 52px; padding: 8px; font-size: 11px; line-height: 1.6; }
+.guide-group:last-child .guide-gallery figure { flex-basis: 270px; }
+.guide-group:last-child .guide-gallery figure a { height: 190px; }
+@media(max-width:600px) { .guide-gallery figure { flex-basis: 75%; }.guide-group:last-child .guide-gallery figure { flex-basis: 90%; } }
 .rule-table { width: 100%; border-collapse: collapse; font-size: var(--text-xs); margin-block: 18px; }
 .rule-table th,.rule-table td { text-align: left; padding: 12px 8px; border-bottom: 1px solid var(--color-line); }
 .empty-state { grid-column: 1 / -1; padding: 48px 24px; text-align: center; border: 1px dashed var(--color-line); }
