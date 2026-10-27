@@ -82,6 +82,7 @@ body { background:var(--color-paper); }
 .credit-tag { font-size:13px;font-weight:700;color:var(--color-accent);border:1px solid var(--color-accent);padding:3px 8px;border-radius:3px;white-space:nowrap; }
 .card-publisher { font-size:11px;color:var(--color-muted);margin-left:auto;display:inline-flex;align-items:center;gap:4px;white-space:nowrap; }
 .survey-card h3 { font-family:var(--font-display);font-size:23px;line-height:1.45;letter-spacing:0;min-height:64px;margin:0 0 16px;overflow-wrap:anywhere;font-weight:800; }
+.language-sticker { display:inline-block;margin-left:5px;padding:0 3px;border:1px solid var(--card-accent);background:var(--card-tint);color:var(--card-accent);font:700 12px/1.7 var(--font-body);white-space:nowrap;vertical-align:middle;transform:rotate(-3deg); }
 .requirements { margin:0 0 24px;min-height:28px;gap:6px; }
 .requirement { background:var(--card-tint);border:0;color:var(--color-ink);padding:4px 8px;font-size:12px;line-height:1.6; }
 .sample-line { margin:0 0 10px; }
@@ -225,6 +226,12 @@ body[data-mode="demo"] .edition-inner>.preview-label { display:block; }
 .owner-edit h3,.owner-notices h3,.official-messages h2 { margin:0 0 14px;font-size:19px; }
 .owner-edit .field { margin-bottom:12px; }
 .publish-section .field { gap:10px; }
+.language-choices { display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0;margin:0 0 18px;padding:0;border:0; }
+.language-choices legend { width:100%;margin-bottom:8px; }
+.language-choices label { display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:8px 16px;border:1px solid var(--color-line);background:var(--color-card);cursor:pointer; }
+.language-choices label:has(:checked) { border-color:var(--color-blue);background:var(--color-blue-pale);font-weight:700; }
+.language-choices label:has(:focus-visible) { outline:2px solid var(--color-accent);outline-offset:3px; }
+.language-choices input { accent-color:var(--color-header); }
 .publish-section .field input,.publish-section .field textarea { font-size:16px;line-height:1.6;border-color:color-mix(in srgb,var(--color-blue) 32%,var(--color-line)); }
 .publish-section .field:has([aria-describedby]) { margin-bottom:6px; }
 .sample-choices { min-width:0;margin:14px 0 18px;padding:0;border:0; }
