@@ -515,3 +515,23 @@ nav .nav-link[data-action="participation"] { position:relative; }
  .card-actions { grid-template-columns:minmax(0,1fr);margin:4px 10px 0;padding:7px 0 9px;gap:5px; }
  .card-actions .button { min-height:36px;padding:5px 3px;font-size:11px; }
 }
+
+/* Completion-page evidence and actionable official notices reuse the club palette. */
+.review-evidence { margin:22px 0;padding:18px;border:1px dashed var(--color-blue);border-radius:10px;background:var(--color-blue-pale);min-width:0; }
+.review-evidence h3 { margin:0 0 8px;font-size:17px; }
+.review-evidence .field { margin-top:16px; }
+.review-evidence input[type="file"] { max-width:100%;width:100%;min-width:0;font-size:13px;padding:10px;background:var(--color-card); }
+.review-evidence img { display:block;max-width:100%;max-height:420px;height:auto;margin:14px auto;border:1px solid var(--color-line);object-fit:contain;background:var(--color-card); }
+.display-term { border-left:4px solid var(--color-accent);margin:18px 0; }
+.display-term>strong { color:var(--color-accent);font-size:17px; }
+.display-term p+p { margin-top:8px; }
+.notice-rejected { border-left:3px solid var(--color-accent);padding-left:12px; }
+.notice-meta { font-size:12px;color:var(--color-muted); }
+.review-reason { color:var(--color-accent);overflow-wrap:anywhere; }
+.notice-item .text-link { margin-top:8px; }
+.contact-list { display:grid;gap:12px;margin:20px 0; }
+.contact-row { display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px;border:1px solid var(--color-line);border-radius:8px;background:var(--color-blue-pale); }
+.contact-row strong { display:block;user-select:text;overflow-wrap:anywhere; }
+.contact-row .button { flex:none;font-size:13px;padding:10px; }
+.footer>div:last-child { flex-wrap:wrap; }
+@media(max-width:400px) { .contact-row { padding:12px;gap:8px; }.review-evidence { padding:12px; } }
